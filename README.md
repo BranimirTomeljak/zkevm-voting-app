@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# zkEVM Voting: App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React client for the on-chain voting system built for my MSc thesis, *Non-interactive Zero-Knowledge proofs in blockchain* (FER Zagreb, 2025). It talks to [zkevm-voting-contracts](https://github.com/BranimirTomeljak/zkevm-voting-contracts) on the Polygon zkEVM Cardona testnet through MetaMask.
 
-## Available Scripts
+<!-- Screenshots: add 2–3 here (current election, past elections, admin panel). -->
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Connects a MetaMask wallet and follows account and network changes
+- Shows the current election with its candidates and vote counts, and lets verified users vote once
+- Lists the results of past elections
+- Admin panel for the contract owner: add candidates, start, end and create elections, and verify or unverify voters
+- Self-verification for the demo (see the note in the contracts README)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+React 19 · TypeScript · Web3.js 4 · Create React App
 
-### `npm test`
+## Running locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You need MetaMask connected to the Polygon zkEVM Cardona testnet.
 
-### `npm run build`
+```bash
+npm install
+npm start   # http://localhost:3000
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contract addresses are in `src/util/constants.tsx`, and the ABIs are in `src/contracts/`.
